@@ -1,0 +1,9 @@
+func solution(price int, money int, count int) int64 {
+    totalFee := int64(price * count * (count + 1) / 2)
+    insufficient := int64(money) - totalFee
+    if insufficient >= 0 {
+        return 0
+    } else {
+        return -insufficient
+    }
+}

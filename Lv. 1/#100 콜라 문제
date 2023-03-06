@@ -1,0 +1,10 @@
+int solution(int a, int b, int n) {
+    int answer = n / a * b; 
+    int empty_bottles = n % a;
+    while (empty_bottles >= a) {  
+        int exchange_bottles = empty_bottles / a; 
+        answer += exchange_bottles * b; 
+        empty_bottles = exchange_bottles * b + empty_bottles % a;  
+    }
+    return answer;
+}
